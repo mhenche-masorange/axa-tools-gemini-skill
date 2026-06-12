@@ -40,7 +40,7 @@ To answer questions about request counts or performance:
  ### 4. Generating Global CSV Reports
    2 To extract configuration details for all APIs (Name, Base Path, Timeout, and Backend) and generate a summary document:
    3 - **Tool**: `run_shell_command`
-   4 - **Command**: `python C:\Users\miguelangel.henche\.gemini\skills\axa\scripts\generate_api_csv.py`
+   4 - **Command**: `python3 scripts/generate_api_csv.py`
    5 - **Description**: This parses all local proxies in the `repo/` directory, extracts their configurations, resolves the real timeouts from `config.json`, and outputs a semicolon-separated `apis_config.csv`
      in the current working directory.
 
@@ -48,8 +48,8 @@ To answer questions about request counts or performance:
 To fetch runtime configuration, regions, state, IP ranges, or organization-level properties (including maintenance update policy and scheduled maintenance windows):
 - **Tool**: `run_shell_command`
 - **Commands**:
-  - `python C:\Users\miguelangel.henche\.gemini\skills\axa-tools\scripts\get_apigee_instances.py --org "ORGANIZATION_NAME"`
-  - `python C:\Users\miguelangel.henche\.gemini\skills\axa-tools\scripts\get_apigee_org.py --org "ORGANIZATION_NAME" --env "ENVIRONMENT_NAME"`
+  - `python3 scripts/get_apigee_instances.py --org "ORGANIZATION_NAME"`
+  - `python3 scripts/get_apigee_org.py --org "ORGANIZATION_NAME" --env "ENVIRONMENT_NAME"`
 - **Description**: These scripts fetch real-time instance details (such as maintenanceUpdatePolicy start times and scheduled platform upgrades) and organization/environment details directly from the Apigee management API using active gcloud authentication. They automatically bypass any system-configured corporate proxies to avoid connection timeouts.
 - **Defaults**: If `--org` is omitted, they default to `osp-openapi-prod`. If `--env` is omitted, it defaults to `apis-prod`.
 
