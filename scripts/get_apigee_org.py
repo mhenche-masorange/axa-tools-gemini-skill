@@ -30,7 +30,7 @@ def main():
     os.environ['NO_PROXY'] = '*'
 
     # Get token
-    token_res = subprocess.run(["gcloud", "auth", "print-access-token"], capture_output=True, text=True, shell=True)
+    token_res = subprocess.run(["gcloud", "auth", "print-access-token"], capture_output=True, text=True)
     token = token_res.stdout.strip()
     if not token:
         print("Error: Could not retrieve token.")
